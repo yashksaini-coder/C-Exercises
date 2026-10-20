@@ -261,4 +261,15 @@ void atomic_hit(void);
 long atomic_hits(void);
 int once_init_value(void);
 
+/* ---------- Stage 12: Interview classics (108-116) ---------- */
+bool two_sum(const int *values, size_t count, int target, size_t *i, size_t *j);
+bool balanced_brackets(const char *s);
+void reverse_words(char *s);
+size_t longest_common_prefix(const char *const *strings, size_t count, char *out, size_t capacity);
+void merge_sorted_arrays(const int *a, size_t a_count, const int *b, size_t b_count, int *out);
+int kth_largest(int *values, size_t count, size_t k);
+char *next_token(char *s, const char *delimiters, char **state);
+int bigint_add(const char *a, const char *b, char *out, size_t capacity);
+bool evaluate_rpn(const char *expression, long *result);
+
 #endif
