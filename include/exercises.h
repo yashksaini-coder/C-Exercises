@@ -33,4 +33,18 @@ void apply_each(int *values, size_t count, int (*transform)(int));
 size_t count_matching(const int *values, size_t count, bool (*predicate)(int));
 size_t remove_duplicates_sorted(int *values, size_t count);
 
+/* ---------- Stage 3: Strings (021-032) ---------- */
+size_t my_strlen(const char *s);
+char *my_strcpy(char *destination, const char *source);
+int my_strcmp(const char *a, const char *b);
+char *my_strchr(const char *s, int c);
+char *my_strstr(const char *haystack, const char *needle);
+void reverse_string(char *s);
+bool is_palindrome(const char *s);
+char *trim(char *s);
+size_t count_words(const char *s);
+int my_atoi(const char *s);
+int int_to_string(int value, char *destination, size_t capacity);
+int compress_runs(const char *s, char *destination, size_t capacity);
+
 #endif
