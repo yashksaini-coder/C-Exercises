@@ -76,4 +76,35 @@ Permissions decode_permissions(uint8_t byte);
 typedef struct { size_t length; char data[]; } OwnedString;
 OwnedString *owned_string_new(const char *s);
 
+/* ---------- Stage 5: Memory (041-050) ---------- */
+char *my_strdup(const char *s);
+int *array_clone(const int *values, size_t count);
+
+typedef struct { int *data; size_t length, capacity; } IntVector;
+int vector_push(IntVector *vector, int value);
+void vector_free(IntVector *vector);
+
+char *string_join(const char *const *parts, size_t count, const char *separator);
+char *read_line(FILE *stream);
+
+typedef struct { unsigned char *base; size_t capacity, used; } Arena;
+int arena_init(Arena *arena, size_t capacity);
+void *arena_alloc(Arena *arena, size_t size, size_t alignment);
+void arena_free(Arena *arena);
+
+int **matrix_alloc(size_t rows, size_t columns);
+void matrix_free(int **matrix);
+
+void *my_calloc(size_t count, size_t size);
+
+typedef struct { char *data; size_t length, capacity; } StringBuilder;
+int sb_append(StringBuilder *sb, const char *s);
+char *sb_finish(StringBuilder *sb);
+
+typedef struct { unsigned char *storage; void *free_list; size_t block_size, block_count; } Pool;
+int pool_init(Pool *pool, size_t block_size, size_t block_count);
+void *pool_get(Pool *pool);
+void pool_put(Pool *pool, void *block);
+void pool_free(Pool *pool);
+
 #endif
