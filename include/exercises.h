@@ -107,4 +107,17 @@ void *pool_get(Pool *pool);
 void pool_put(Pool *pool, void *block);
 void pool_free(Pool *pool);
 
+/* ---------- Stage 6: Bits and bytes (051-060) ---------- */
+unsigned bit_count(uint32_t value);
+bool is_power_of_two(uint64_t value);
+uint32_t reverse_bits(uint32_t value);
+uint32_t bit_set(uint32_t value, unsigned index, bool on);
+uint32_t read_u32_be(const unsigned char *bytes);
+void write_u32_be(unsigned char *bytes, uint32_t value);
+uint16_t my_htons(uint16_t value);
+uint32_t my_htonl(uint32_t value);
+size_t pack(unsigned char *buffer, const char *format, ...);
+size_t unpack(const unsigned char *buffer, const char *format, ...);
+uint16_t internet_checksum(const unsigned char *data, size_t length);
+
 #endif
