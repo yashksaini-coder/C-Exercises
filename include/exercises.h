@@ -163,4 +163,46 @@ const char *describe_int(int value);
 const char *describe_double(double value);
 const char *describe_string(const char *value);
 
+/* ---------- Stage 8: Data structures (069-079) ---------- */
+typedef struct { int items[64]; size_t count; } Stack;
+int stack_push(Stack *stack, int value);
+int stack_pop(Stack *stack, int *out);
+
+typedef struct { int items[8]; size_t head, count; } Queue;
+int queue_enqueue(Queue *queue, int value);
+int queue_dequeue(Queue *queue, int *out);
+
+typedef struct IntNode { int value; struct IntNode *next; } IntNode;
+int list_push_back(IntNode **head, int value);
+size_t list_length(const IntNode *head);
+void list_free(IntNode *head);
+IntNode *list_reverse(IntNode *head);
+bool list_has_cycle(const IntNode *head);
+IntNode *list_merge_sorted(IntNode *a, IntNode *b);
+
+uint64_t hash_djb2(const char *s);
+typedef struct HashEntry { char *key; int value; struct HashEntry *next; } HashEntry;
+typedef struct { HashEntry *buckets[64]; size_t count; } HashMap;
+int hashmap_put(HashMap *map, const char *key, int value);
+bool hashmap_get(const HashMap *map, const char *key, int *out);
+void hashmap_free(HashMap *map);
+
+typedef struct TreeNode { int value; struct TreeNode *left, *right; } TreeNode;
+int bst_insert(TreeNode **root, int value);
+bool bst_contains(const TreeNode *root, int value);
+void bst_free(TreeNode *root);
+size_t bst_height(const TreeNode *root);
+size_t bst_to_sorted_array(const TreeNode *root, int *out, size_t capacity);
+
+typedef struct { int items[64]; size_t count; } MinHeap;
+int heap_push(MinHeap *heap, int value);
+int heap_pop(MinHeap *heap, int *out);
+
+typedef struct LruNode { int key, value; struct LruNode *prev, *next; } LruNode;
+typedef struct { size_t capacity, count; LruNode *head, *tail; } LruCache;
+void lru_init(LruCache *cache, size_t capacity);
+bool lru_get(LruCache *cache, int key, int *out);
+int lru_put(LruCache *cache, int key, int value);
+void lru_free(LruCache *cache);
+
 #endif
