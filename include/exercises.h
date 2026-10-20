@@ -225,4 +225,23 @@ typedef struct { char *name; char *value; int *numbers; size_t number_count; } C
 int load_config(const char *path, Config *out);
 void config_free(Config *config);
 
+/* ---------- Stage 10: Networking (089-102) ---------- */
+struct sockaddr; /* forward-declare; include <sys/socket.h> in the exercise */
+bool parse_ipv4(const char *s, uint8_t out[4]);
+int format_ipv4(const uint8_t address[4], char *destination, size_t capacity);
+bool ipv4_in_subnet(const uint8_t address[4], const uint8_t network[4], unsigned prefix_length);
+int parse_host_port(const char *s, char *host, size_t host_capacity, uint16_t *port);
+int sockaddr_to_string(const struct sockaddr *address, char *destination, size_t capacity);
+int send_all(int fd, const void *buffer, size_t length);
+int recv_exact(int fd, void *buffer, size_t length);
+int send_frame(int fd, const void *payload, uint32_t length);
+ptrdiff_t recv_frame(int fd, void *buffer, size_t capacity);
+int tcp_listen(const char *port);
+int tcp_connect(const char *host, const char *port);
+int echo_serve_one(int listen_fd);
+int wait_readable(const int *fds, size_t count, int timeout_ms, bool *ready);
+int resolve_ipv4(const char *hostname, char *destination, size_t capacity);
+typedef struct { char method[8]; char path[256]; char version[16]; } RequestLine;
+bool parse_request_line(const char *line, RequestLine *out);
+
 #endif
