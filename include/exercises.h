@@ -205,4 +205,24 @@ bool lru_get(LruCache *cache, int key, int *out);
 int lru_put(LruCache *cache, int key, int value);
 void lru_free(LruCache *cache);
 
+/* ---------- Stage 9: Environment and toolchain (080-088) ---------- */
+typedef struct { int count; bool verbose; const char *output; } Options;
+int parse_args(int argc, char **argv, Options *out);
+int copy_file(const char *source_path, const char *destination_path);
+size_t count_lines(FILE *stream);
+int write_records(const char *path, const Record *records, size_t count);
+ptrdiff_t read_records(const char *path, Record *out, size_t capacity);
+long sum_ints(size_t count, ...);
+int log_message(char *buffer, size_t capacity, const char *level, const char *format, ...);
+#define ARRAY_LENGTH(array) (sizeof(array) / sizeof((array)[0]))
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+size_t safe_min_calls(void);
+typedef enum { ERR_OK, ERR_DIVIDE_BY_ZERO, ERR_OVERFLOW, ERR_INVALID } Error;
+Error safe_divide(int a, int b, int *out);
+const char *error_string(Error error);
+typedef struct { char *name; char *value; int *numbers; size_t number_count; } Config;
+int load_config(const char *path, Config *out);
+void config_free(Config *config);
+
 #endif
