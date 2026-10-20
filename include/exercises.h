@@ -244,4 +244,21 @@ int resolve_ipv4(const char *hostname, char *destination, size_t capacity);
 typedef struct { char method[8]; char path[256]; char version[16]; } RequestLine;
 bool parse_request_line(const char *line, RequestLine *out);
 
+/* ---------- Stage 11: Concurrency (103-107) ---------- */
+long parallel_sum(const int *values, size_t count, size_t thread_count);
+typedef struct SafeCounter SafeCounter; /* opaque; holds a mutex */
+SafeCounter *safe_counter_new(void);
+void safe_counter_add(SafeCounter *counter, long amount);
+long safe_counter_get(SafeCounter *counter);
+void safe_counter_free(SafeCounter *counter);
+typedef struct BoundedQueue BoundedQueue; /* opaque; mutex + condition variables */
+BoundedQueue *bounded_queue_new(size_t capacity);
+void bounded_queue_push(BoundedQueue *queue, int value);
+int bounded_queue_pop(BoundedQueue *queue);
+void bounded_queue_free(BoundedQueue *queue);
+void atomic_hits_reset(void);
+void atomic_hit(void);
+long atomic_hits(void);
+int once_init_value(void);
+
 #endif
