@@ -120,4 +120,47 @@ size_t pack(unsigned char *buffer, const char *format, ...);
 size_t unpack(const unsigned char *buffer, const char *format, ...);
 uint16_t internet_checksum(const unsigned char *data, size_t length);
 
+/* ---------- Stage 7: Object-oriented C (061-068) ---------- */
+typedef struct Counter Counter; /* opaque: defined only in 061.c */
+Counter *counter_new(int start);
+void counter_increment(Counter *counter);
+int counter_get(const Counter *counter);
+void counter_free(Counter *counter);
+
+typedef struct Shape Shape;
+typedef struct {
+    double (*area)(const Shape *self);
+    double (*perimeter)(const Shape *self);
+    const char *(*name)(const Shape *self);
+} ShapeVTable;
+struct Shape { const ShapeVTable *vtable; };
+Shape *shape_new_circle(double radius);
+Shape *shape_new_rectangle(double width, double height);
+double shape_area(const Shape *shape);
+double shape_perimeter(const Shape *shape);
+const char *shape_name(const Shape *shape);
+void shape_free(Shape *shape);
+
+typedef int (*Comparator)(const void *a, const void *b);
+const void *generic_max(const void *base, size_t count, size_t size, Comparator compare);
+void my_qsort(void *base, size_t count, size_t size, Comparator compare);
+void *my_bsearch(const void *key, const void *base, size_t count, size_t size, Comparator compare);
+
+typedef void (*EventHandler)(void *context, int event);
+typedef struct { EventHandler handlers[8]; void *contexts[8]; size_t count; } Emitter;
+int emitter_connect(Emitter *emitter, EventHandler handler, void *context);
+void emitter_emit(Emitter *emitter, int event);
+
+typedef struct Animal Animal;
+struct Animal { const char *(*speak)(const Animal *self); const char *name; };
+Animal *animal_new_dog(const char *name);
+Animal *animal_new_cat(const char *name);
+const char *animal_speak(const Animal *animal);
+void animal_free(Animal *animal);
+
+#define TYPE_NAME(x) _Generic((x), int: "int", double: "double", char: "char", char *: "char *", const char *: "const char *", default: "unknown")
+const char *describe_int(int value);
+const char *describe_double(double value);
+const char *describe_string(const char *value);
+
 #endif
