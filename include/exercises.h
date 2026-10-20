@@ -21,4 +21,16 @@ bool add_overflows(int a, int b);
 double average(const int *values, size_t count);
 int collatz_steps(uint64_t n);
 
+/* ---------- Stage 2: Pointers and arrays (011-020) ---------- */
+void swap_int(int *a, int *b);
+size_t array_max_index(const int *values, size_t count);
+void array_reverse(int *values, size_t count);
+void array_rotate_left(int *values, size_t count, size_t k);
+ptrdiff_t find_index(const int *values, size_t count, int target);
+ptrdiff_t pointer_distance(const int *first, const int *second);
+void matrix_transpose(size_t n, int matrix[n][n]);
+void apply_each(int *values, size_t count, int (*transform)(int));
+size_t count_matching(const int *values, size_t count, bool (*predicate)(int));
+size_t remove_duplicates_sorted(int *values, size_t count);
+
 #endif
