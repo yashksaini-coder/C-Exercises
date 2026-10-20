@@ -47,4 +47,33 @@ int my_atoi(const char *s);
 int int_to_string(int value, char *destination, size_t capacity);
 int compress_runs(const char *s, char *destination, size_t capacity);
 
+/* ---------- Stage 4: Structs, enums, unions, bit-fields (033-040) ---------- */
+typedef struct { double x, y; } Point;
+double point_distance(Point a, Point b);
+
+typedef struct { Point origin; double width, height; } Rect;
+double rect_area(Rect r);
+bool rect_contains(Rect r, Point p);
+
+typedef struct { char name[32]; int score; } Student;
+int compare_students(const void *a, const void *b); /* qsort order: score desc, then name asc */
+
+typedef enum { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY, DAY_COUNT } Day;
+const char *day_name(Day day);
+Day next_day(Day day);
+
+typedef struct { int id; char tag[8]; double weight; } Record;
+#define CONTAINER_OF(pointer, Type, member) ((Type *)((char *)(pointer) - offsetof(Type, member)))
+Record *record_from_weight(double *weight_pointer);
+
+uint32_t float_bits(float value);
+float bits_to_float(uint32_t bits);
+
+typedef struct { unsigned read : 1, write : 1, execute : 1, level : 5; } Permissions;
+uint8_t encode_permissions(Permissions p);
+Permissions decode_permissions(uint8_t byte);
+
+typedef struct { size_t length; char data[]; } OwnedString;
+OwnedString *owned_string_new(const char *s);
+
 #endif
