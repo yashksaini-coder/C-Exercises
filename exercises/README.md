@@ -1,5 +1,7 @@
 # Exercise index
 
+![Level select: the 12 stages](../docs/assets/roadmap.png)
+
 Work in order within a stage; stages can be taken in any order once you are
 past Stage 3. Read the `.md`, experiment in the matching `.c` file, then run
 `make test N=<number>`. Each stage points at the chapter of Beej's guides it
@@ -8,7 +10,7 @@ draws from.
 - **BGC** = [Beej's Guide to C Programming](https://beej.us/guide/bgc/html/split/)
 - **BGNET** = [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/split-wide/index.html)
 
-## Stage 1 — Foundations (BGC ch. 2–4, 14)
+## <img src="../docs/assets/stage-01.png" width="32" alt=""> Stage 1 — Foundations (BGC ch. 2–4, 14)
 
 | #   | Function        | Instructions                            |
 | --- | --------------- | --------------------------------------- |
@@ -23,7 +25,7 @@ draws from.
 | 9   | `average`       | [Integer to floating point](009.md)     |
 | 10  | `collatz_steps` | [Loops with unsigned 64-bit](010.md)    |
 
-## Stage 2 — Pointers and arrays (BGC ch. 5, 6, 11, 23)
+## <img src="../docs/assets/stage-02.png" width="32" alt=""> Stage 2 — Pointers and arrays (BGC ch. 5, 6, 11, 23)
 
 | #   | Function                   | Instructions                             |
 | --- | -------------------------- | ---------------------------------------- |
@@ -38,7 +40,7 @@ draws from.
 | 19  | `count_matching`           | [Predicates as callbacks](019.md)        |
 | 20  | `remove_duplicates_sorted` | [Two-pointer compaction](020.md)         |
 
-## Stage 3 — Strings (BGC ch. 7, 15, 21)
+## <img src="../docs/assets/stage-03.png" width="32" alt=""> Stage 3 — Strings (BGC ch. 7, 15, 21)
 
 | #   | Function         | Instructions                         |
 | --- | ---------------- | ------------------------------------ |
@@ -55,7 +57,7 @@ draws from.
 | 31  | `int_to_string`  | [Int to decimal string](031.md)      |
 | 32  | `compress_runs`  | [Run-length encoding](032.md)        |
 
-## Stage 4 — Structs, enums, unions, bit-fields (BGC ch. 8, 10, 20, 22)
+## <img src="../docs/assets/stage-04.png" width="32" alt=""> Stage 4 — Structs, enums, unions, bit-fields (BGC ch. 8, 10, 20, 22)
 
 | #   | Function                                     | Instructions                                  |
 | --- | -------------------------------------------- | --------------------------------------------- |
@@ -68,7 +70,7 @@ draws from.
 | 39  | `encode_permissions`, `decode_permissions`   | [Bit-fields](039.md)                          |
 | 40  | `owned_string_new`                           | [Flexible array members](040.md)              |
 
-## Stage 5 — Memory (BGC ch. 12, 16, 35)
+## <img src="../docs/assets/stage-05.png" width="32" alt=""> Stage 5 — Memory (BGC ch. 12, 16, 35)
 
 | #   | Function                                | Instructions                                  |
 | --- | --------------------------------------- | --------------------------------------------- |
@@ -83,7 +85,7 @@ draws from.
 | 49  | `sb_append`, `sb_finish`                | [String builder with ownership](049.md)       |
 | 50  | `pool_init`, `pool_get`, `pool_put`, `pool_free` | [Fixed-size block pool](050.md)      |
 
-## Stage 6 — Bits and bytes (BGC ch. 24, 37; BGNET §3.2, §7.5)
+## <img src="../docs/assets/stage-06.png" width="32" alt=""> Stage 6 — Bits and bytes (BGC ch. 24, 37; BGNET §3.2, §7.5)
 
 | #   | Function            | Instructions                             |
 | --- | ------------------- | ---------------------------------------- |
@@ -98,7 +100,7 @@ draws from.
 | 59  | `unpack`            | [Variadic unpacker](059.md)              |
 | 60  | `internet_checksum` | [RFC 1071 checksum](060.md)              |
 
-## Stage 7 — Object-oriented C (BGC §20.7, §23.7, ch. 35, §32.2)
+## <img src="../docs/assets/stage-07.png" width="32" alt=""> Stage 7 — Object-oriented C (BGC §20.7, §23.7, ch. 35, §32.2)
 
 | #   | Function                                        | Instructions                              |
 | --- | ----------------------------------------------- | ----------------------------------------- |
@@ -111,7 +113,7 @@ draws from.
 | 67  | `animal_new_dog`, `animal_new_cat`, `animal_speak`, `animal_free` | [Inheritance by embedding](067.md) |
 | 68  | `describe_int`, `describe_double`, `describe_string` | [_Generic selections](068.md)        |
 
-## Stage 8 — Data structures (interview core)
+## <img src="../docs/assets/stage-08.png" width="32" alt=""> Stage 8 — Data structures (interview core)
 
 | #   | Function                                        | Instructions                              |
 | --- | ----------------------------------------------- | ----------------------------------------- |
@@ -127,7 +129,7 @@ draws from.
 | 78  | `heap_push`, `heap_pop`                         | [Binary min-heap](078.md)                 |
 | 79  | `lru_init`, `lru_get`, `lru_put`, `lru_free`    | [LRU cache](079.md)                       |
 
-## Stage 9 — Environment and toolchain (BGC ch. 9, 17–19, 25, 28, 31)
+## <img src="../docs/assets/stage-09.png" width="32" alt=""> Stage 9 — Environment and toolchain (BGC ch. 9, 17–19, 25, 28, 31)
 
 | #   | Function                        | Instructions                                   |
 | --- | ------------------------------- | ---------------------------------------------- |
@@ -141,7 +143,7 @@ draws from.
 | 87  | `safe_divide`, `error_string`   | [Error codes and errno style](087.md)          |
 | 88  | `load_config`, `config_free`    | [goto cleanup and ownership](088.md)           |
 
-## Stage 10 — Networking (BGNET ch. 3, 5, 6, 7)
+## <img src="../docs/assets/stage-10.png" width="32" alt=""> Stage 10 — Networking (BGNET ch. 3, 5, 6, 7)
 
 | #   | Function                   | Instructions                                     |
 | --- | -------------------------- | ------------------------------------------------ |
@@ -160,7 +162,7 @@ draws from.
 | 101 | `resolve_ipv4`             | [DNS via getaddrinfo](101.md)                    |
 | 102 | `parse_request_line`       | [Parsing an HTTP request line](102.md)           |
 
-## Stage 11 — Concurrency (BGC ch. 39, 40; POSIX threads)
+## <img src="../docs/assets/stage-11.png" width="32" alt=""> Stage 11 — Concurrency (BGC ch. 39, 40; POSIX threads)
 
 | #   | Function                                     | Instructions                             |
 | --- | -------------------------------------------- | ---------------------------------------- |
@@ -170,7 +172,7 @@ draws from.
 | 106 | `atomic_hit`, `atomic_hits`, `atomic_hits_reset` | [Atomics](106.md)                    |
 | 107 | `once_init_value`                            | [Run-once initialization](107.md)        |
 
-## Stage 12 — Interview classics
+## <img src="../docs/assets/stage-12.png" width="32" alt=""> Stage 12 — Interview classics
 
 | #   | Function                | Instructions                                  |
 | --- | ----------------------- | --------------------------------------------- |

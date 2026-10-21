@@ -1,5 +1,7 @@
 # c-practice-track
 
+![c-practice-track: 116 exercises, 12 stages, C11](docs/assets/banner.png)
+
 116 small, self-paced C exercises with a test suite, taking you from basic
 syntax to memory management, object-oriented C, data structures, POSIX
 networking and threads — the ground that C/C++ developer interviews actually
@@ -62,20 +64,22 @@ See [`exercises/README.md`](./exercises/README.md) for the full list, and
 [`docs/roadmap.md`](./docs/roadmap.md) for how the stages map to the two
 guides and to the questions that come up in C/C++ interviews.
 
-| Stage | Topic                                   | Exercises |
-| ----- | --------------------------------------- | --------- |
-| 1     | Foundations                             | 001–010   |
-| 2     | Pointers and arrays                     | 011–020   |
-| 3     | Strings                                 | 021–032   |
-| 4     | Structs, enums, unions, bit-fields      | 033–040   |
-| 5     | Memory                                  | 041–050   |
-| 6     | Bits and bytes                          | 051–060   |
-| 7     | Object-oriented C                       | 061–068   |
-| 8     | Data structures                         | 069–079   |
-| 9     | Environment and toolchain               | 080–088   |
-| 10    | Networking                              | 089–102   |
-| 11    | Concurrency                             | 103–107   |
-| 12    | Interview classics                      | 108–116   |
+[![Level select: the 12 stages](docs/assets/roadmap.png)](docs/roadmap.md)
+
+|  | Stage | Topic                                   | Exercises |
+| -- | ----- | --------------------------------------- | --------- |
+| <img src="docs/assets/stage-01.png" width="40" alt=""> | 1     | Foundations                             | 001–010   |
+| <img src="docs/assets/stage-02.png" width="40" alt=""> | 2     | Pointers and arrays                     | 011–020   |
+| <img src="docs/assets/stage-03.png" width="40" alt=""> | 3     | Strings                                 | 021–032   |
+| <img src="docs/assets/stage-04.png" width="40" alt=""> | 4     | Structs, enums, unions, bit-fields      | 033–040   |
+| <img src="docs/assets/stage-05.png" width="40" alt=""> | 5     | Memory                                  | 041–050   |
+| <img src="docs/assets/stage-06.png" width="40" alt=""> | 6     | Bits and bytes                          | 051–060   |
+| <img src="docs/assets/stage-07.png" width="40" alt=""> | 7     | Object-oriented C                       | 061–068   |
+| <img src="docs/assets/stage-08.png" width="40" alt=""> | 8     | Data structures                         | 069–079   |
+| <img src="docs/assets/stage-09.png" width="40" alt=""> | 9     | Environment and toolchain               | 080–088   |
+| <img src="docs/assets/stage-10.png" width="40" alt=""> | 10    | Networking                              | 089–102   |
+| <img src="docs/assets/stage-11.png" width="40" alt=""> | 11    | Concurrency                             | 103–107   |
+| <img src="docs/assets/stage-12.png" width="40" alt=""> | 12    | Interview classics                      | 108–116   |
 
 ## Suggested pace
 
