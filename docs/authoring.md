@@ -132,3 +132,15 @@ make test N=<n> SOLUTION=1 SANITIZE=1
 make test N=<n>                       # the stub must compile and FAIL cleanly
 cc -std=c11 -Wall -Wextra -Wpedantic -Iinclude -I. -Itests -fsyntax-only exercises/NNN.c
 ```
+
+## Images (`docs/assets/`)
+
+| File                   | Size     | Used in                                              |
+| ---------------------- | -------- | ---------------------------------------------------- |
+| `banner.png`           | 1408×416 | top of `README.md`                                   |
+| `roadmap.png`          | 1608×536 | `README.md` index, `exercises/README.md`, `docs/roadmap.md` |
+| `stage-NN.png`         | 160×160  | stage table in `README.md`, stage headings in both indexes (shown at 32–40px) |
+| `social-preview.png`   | 1280×640 | GitHub → Settings → Social preview (not linked from Markdown) |
+
+A new stage needs a `stage-NN.png` in the same 160×160 pixel style, referenced
+in all three places above.
